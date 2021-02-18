@@ -25,7 +25,7 @@
     <?php
     $servername = "localhost:3307";
     $username = "root";
-    $password = "pm18082000";
+    $password = " ";
     $dbname = "bank";
     
     $conn = mysqli_connect($servername, $username, $password, $dbname);
