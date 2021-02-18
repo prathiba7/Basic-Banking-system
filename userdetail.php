@@ -53,7 +53,7 @@
         <?php
          $servername = "localhost:3307";
          $username = "root";
-         $password = "pm18082000";
+         $password = " ";
          $dbname = "bank";
          
          $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -61,7 +61,7 @@
          if (!$conn) {
              die("Couldn't connect to the Database" . mysqli_connect_error());
          }
-         $sid = (isset($_GET['id']) ? $_GET['id'] : '8');
+         $sid = (isset($_GET['id']) ? $_GET['id'] : ' ');
         $sql1 = "SELECT id,name,email,balance  FROM  users where id ='$sid' " ;
         $query = $conn->query($sql1) or die( die($conn->error)) ;
         $result1 = mysqli_query($conn, $sql1) ;
@@ -94,9 +94,9 @@
             <select name="to" class="form-control" required style="width:50%;">
                 <option value="" disabled selected>Choose</option>
                 <?php
-                  $servername = "localhost:3307";
+                  $servername = "localhost";
                   $username = "root";
-                  $password = "pm18082000";
+                  $password = " ";
                   $dbname = "bank";
                   
                   $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -106,7 +106,7 @@
                   }
                
   
-                $sid = (isset($_GET['id']) ? $_GET['id'] : '8');
+                $sid = (isset($_GET['id']) ? $_GET['id'] : '');
                 $sql = "SELECT * FROM users where id!='$sid' ";
                 $query = $conn->query($sql) or die( die($conn->error));
                 
@@ -150,9 +150,9 @@
 
 </html>
 <?php
-   $servername = "localhost:3307";
+   $servername = "localhost";
    $username = "root";
-   $password = "pm18082000";
+   $password = " ";
    $dbname = "bank";
    
    $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -162,7 +162,7 @@
    }
 
 if (isset($_POST['submit'])) {
-    $from = (isset($_GET['id']) ? $_GET['id'] : '8');
+    $from = (isset($_GET['id']) ? $_GET['id'] : ' ');
     
     $to = $_POST['to'];
     $amount = $_POST['amount'];
